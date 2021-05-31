@@ -11,7 +11,7 @@
     <img src="" alt="Image Guess the correlation">
     <table>
       <tr>
-        <td onclick="newgameprompt()">New Game</td>
+        <td onclick="newgameprompt(newgame.php)">New Game</td>
       </tr>
       <tr>
         <td>Two Players</td>
