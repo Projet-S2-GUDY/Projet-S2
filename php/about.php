@@ -18,9 +18,8 @@
     <br>
   <h1>About me<h1>
     <br>
-  <p>i'm a phd student studying bioinformatics at the university of cambridge and the european bioinformatics institute. this game is a side project to feed one of my many day-to-day curiosities.
-i'm always grateful for suggestions and happy to answer questions about the game or how the data will be used. so tweet me at @omarwagih or email me.<p>
-<!--Changer ce texte-->
+  <p>We are a group a Student studying statistics and business intelligence. This game is a second semester project of our studies.
+We're always grateful for suggestions and happy to answer questions about the game or how the data will be used. so email us if you need any information.<p>
     <br>
   <h1>Usage disclaimer and privacy statement<h1>
     <br>
