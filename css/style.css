@@ -38,6 +38,7 @@ h1 {
   font-size: 1.5em; /* equivalent de 24px */
   font-weight: normal;
   line-height: normal;
+  text-align: center;
   margin: 10% 0;
 }
 h2 {
