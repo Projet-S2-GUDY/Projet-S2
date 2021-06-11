@@ -1,3 +1,4 @@
+/*Pour chaque html, utiliser cela : <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
 /*https://www.fontsquirrel.com/tools/webfont-generator*/
 
 @font-face {
@@ -15,8 +16,12 @@
     font-style: normal;
 }
 
-/* Toute cette partie sera adapté avec des tests, site pour s'aider : https://nekocalc.com/fr/px-a-em-convertisseur
-mais aussi https://www.alsacreations.com/astuce/lire/654-feuille-de-styles-de-base.html */
+/* Toute cette partie sera adapté avec des tests, site pour s'aider :
+- https://nekocalc.com/fr/px-a-em-convertisseur
+- https://www.alsacreations.com/astuce/lire/654-feuille-de-styles-de-base.html
+- https://www.w3schools.com/css/css_rwd_viewport.asp#:~:text=Setting%20The%20Viewport&text=The%20width%3Ddevice%2Dwidth%20part,first%20loaded%20by%20the%20browser.
+*/
+
 html {
 	font-size: 75%;
 }
@@ -50,4 +55,8 @@ p {
   font-weight: normal;
   line-height: normal;
   margin: 2% 0;
+}
+
+img {
+  max-width: 100%;
 }
