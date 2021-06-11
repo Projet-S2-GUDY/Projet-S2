@@ -39,7 +39,6 @@ h1 {
   font-weight: normal;
   line-height: normal;
   text-align: center;
-  margin: 10% 0;
 }
 h2 {
   color : red;
@@ -47,7 +46,6 @@ h2 {
   font-size: 1,3em; /* equivalent de 20px */
   font-weight: normal;
   line-height: normal;
-  margin: 5% 0;
 }
 p {
   color : black;
@@ -55,7 +53,6 @@ p {
   font-size: 1em; /* equivalent de 16px */
   font-weight: normal;
   line-height: normal;
-  margin: 2% 0;
 }
 
 img {
