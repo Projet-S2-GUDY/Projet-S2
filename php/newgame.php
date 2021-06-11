@@ -37,7 +37,6 @@
 
     // Display using Plotly
     Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
-    document.write(randomNumber());
     </script>
   </body>
 </html>
