@@ -31,6 +31,8 @@ body {
 	font-family: "bittypix_monospaceregular", "mario_kart_dsregular";
 	font-size: 1em; /* equivalent de 16px */
 	line-height: 1.5; /* adapter au design */
+  padding-left: 550px;
+  padding-right: 550px;
 }
 h1 {
   color : black;
