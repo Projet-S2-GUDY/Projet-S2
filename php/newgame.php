@@ -32,6 +32,8 @@
       xaxis: {range: [0, 1], title: "titre1", dtick: 0.5},
       yaxis: {range: [0, 1], title: "titre2", dtick: 0.5},
       title: "titregraph",
+      yaxis: {fixedrange: true},
+      xaxis : {fixedrange: true},
       hovermode: false,
     };
 
