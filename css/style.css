@@ -1,7 +1,53 @@
+/*https://www.fontsquirrel.com/tools/webfont-generator*/
+
 @font-face {
-        font-family: 'Mario Kart DS';
-        src: ;
-        font-weight: 100;
-        font-style: normal;
-        font-stretch: normal;
+    font-family: 'bittypix_monospaceregular';
+    src: url('bittypix-monospace-webfont.woff2') format('woff2'),
+         url('bittypix-monospace-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'mario_kart_dsregular';
+    src: url('mario-kart-ds-webfont.woff2') format('woff2'),
+         url('mario-kart-ds-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Toute cette partie sera adapté avec des tests, site pour s'aider : https://nekocalc.com/fr/px-a-em-convertisseur
+mais aussi https://www.alsacreations.com/astuce/lire/654-feuille-de-styles-de-base.html */
+html {
+	font-size: 75%;
+}
+body {
+	background-color: #fff;
+	color: #000;
+	font-family: "bittypix_monospaceregular", "mario_kart_dsregular";
+	font-size: 1em; /* equivalent de 16px */
+	line-height: 1.5; /* adapter au design */
+}
+h1 {
+  color : black;
+  font-family: "mario_kart_dsregular";
+  font-size: 1.5em; /* equivalent de 24px */
+  font-weight: normal;
+  line-height: normal;
+  margin: 10% 0;
+}
+h2 {
+  color : red;
+  font-family: "mario_kart_dsregular";
+  font-size: 1,3em; /* equivalent de 20px */
+  font-weight: normal;
+  line-height: normal;
+  margin: 5% 0;
+}
+p {
+  color : black;
+  font-family: "bittypix_monospaceregular";
+  font-size: 1em; /* equivalent de 16px */
+  font-weight: normal;
+  line-height: normal;
+  margin: 2% 0;
 }
