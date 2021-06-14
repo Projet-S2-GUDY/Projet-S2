@@ -17,8 +17,7 @@
         var yArray = [];
         var xArr = [];
         var yArr = [];
-        // var rho = Math.round(Math.random()*100)/100;
-        var rho = 0.87;
+        var rho = Math.round(Math.random()*100)/100;
         var y1 = 1;
         var y2 = rho;
         var x1 = 0;
