@@ -1,20 +1,4 @@
-/*Pour chaque html, utiliser cela : <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
-/*https://www.fontsquirrel.com/tools/webfont-generator*/
-
-@font-face {
-    font-family: 'bittypix_monospaceregular';
-    src: url('bittypix-monospace-webfont.woff2') format('woff2'),
-         url('bittypix-monospace-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'mario_kart_dsregular';
-    src: url('mario-kart-ds-webfont.woff2') format('woff2'),
-         url('mario-kart-ds-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* Toute cette partie sera adapté avec des tests, site pour s'aider :
 - https://nekocalc.com/fr/px-a-em-convertisseur
@@ -28,7 +12,7 @@ html {
 body {
 	background-color: #fff;
 	color: #000;
-	font-family: "bittypix_monospaceregular", "mario_kart_dsregular";
+	font-family: 'Press Start 2P', cursive;
 	font-size: 1em; /* equivalent de 16px */
 	line-height: 1.5; /* adapter au design */
   padding-left: 550px;
@@ -36,7 +20,7 @@ body {
 }
 h1 {
   color : black;
-  font-family: "mario_kart_dsregular";
+  font-family: 'Press Start 2P', cursive;
   font-size: 1.5em; /* equivalent de 24px */
   font-weight: normal;
   line-height: normal;
@@ -44,14 +28,14 @@ h1 {
 }
 h2 {
   color : red;
-  font-family: "mario_kart_dsregular";
+  font-family: 'Press Start 2P', cursive;
   font-size: 1,3em; /* equivalent de 20px */
   font-weight: normal;
   line-height: normal;
 }
 p {
   color : black;
-  font-family: "bittypix_monospaceregular";
+  font-family: 'Press Start 2P', cursive;
   font-size: 1em; /* equivalent de 16px */
   font-weight: normal;
   line-height: normal;
