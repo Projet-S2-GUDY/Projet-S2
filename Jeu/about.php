@@ -11,7 +11,7 @@
   <p>the aim of the game is simple. try to guess <FONT color="blue"><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">how correlated the two variables in a scatter plot are.</FONT></a>the closer your guess is to the true correlation, the better.</p>
     <br>
   <p>Your guess should be between zero and one, where zero is no correlation and one is perfect correlation. no negative correlations are used in the game. here are some examples:</p>
-<!--mettre les images -->
+  <a href="https://ibb.co/17kVgk6"><img src="https://i.ibb.co/Qp4Bg4d/example-about.jpg" alt="example-about" border="0"></a>
     <br>
   <p>guess the correlation is a <a href="https://en.wikipedia.org/wiki/Human-based_computation_game">game with a purpose.</a> this means, while it aims to be entertaining, data on the guesses is collected and used to analyse how we perceive correlations in scatter plots. so the more people that play, the more data is generated!<p>
     <br>

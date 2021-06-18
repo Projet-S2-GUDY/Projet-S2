@@ -8,7 +8,7 @@
       <script src="../js/fonction.js"></script>
   </head>
   <body>
-    <a href="menu.php">Main Menu</a>
+    <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
       <div id="points">
         <p>VIE : <span id="life">3</span></p>
         <p>COINS : <span id="coins">0</span></p>
