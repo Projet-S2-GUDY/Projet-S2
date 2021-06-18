@@ -8,11 +8,13 @@
   </head>
   <body>
     <a href="menu.php">Main Menu</a>
-    <div class="jeu">
-
+      <div id="points">
+        <p>VIE : <span id="life">3</span></p>
+        <p>COINS : <span id="coins">0</span></p>
+      </div>
       <div id="myPlot" style="width:100%;max-width:40%"></div>
+      <!-- //scatterplot -->
       <script>
-        // faire une fonction qui va boucler la matrice avec 100 points aleatoire entre 0 et 1
         var xArray = [];
         var yArray = [];
         var xArr = [];
@@ -22,7 +24,7 @@
         var y2 = rho;
         var x1 = 0;
         var x2 = Math.sqrt(1-rho**2)
-        for (var i=0, t=100; i<t; i++) {
+        for (var i=0, t=50; i<t; i++) {
           xbis = Math.random();
           ybis = Math.random();
           xArray.push(xbis*y1+ybis*x1)
@@ -40,7 +42,7 @@
           xaxis: {range: [0, 1], title: "titre1", dtick: 0.5,fixedrange: true},
           yaxis: {range: [0, 1], title: "titre2", dtick: 0.5,fixedrange: true},
           autosize: true,
-          title: "titregraph",
+          title: "titre graph",
           hovermode: false,
         };
 
@@ -48,12 +50,38 @@
         Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
         document.write("réponse: ",rho);
       </script>
-
-      <div class="repdiv">
-        <input type="text" id="try" name="try" value="">
-        <input type="button" id="reponse" name="reponse" value="GUESS">
+      <div class="bouton">
+        <input type="text" id="try" name="try" value="0.">
+        <input type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
       </div>
+      <div id="new">
 
-    </div>
+      </div>
+      <!-- comparaison réponse -->
+      <script>
+        function test(){
+          document.getElementById("new").innerHTML = "";
+          var rep = document.getElementById("try").value;
+          var life = eval(document.getElementById('life').innerHTML);
+          var coin = eval(document.getElementById('coins').innerHTML);
+          var tag = document.createElement("p");
+          var result = Math.abs(rho-rep);
+          var text = document.createTextNode("True R : "+ rho +" <br>Guessed R: "+rep+"Difference: "+result);
+          var element = document.getElementById("new");
+          tag.appendChild(text);
+
+          if (result <=0.05) {
+            life = life + 1;
+            coin = coin + 5;
+          }else if (result <=0.1) {
+            coin = coin + 1;
+          }else {
+            life = life - 1;
+          }
+          element.appendChild(tag);
+          document.getElementById('life').innerHTML = life;
+          document.getElementById('coins').innerHTML = coin;
+        }
+      </script>
   </body>
 </html>
