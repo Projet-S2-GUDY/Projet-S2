@@ -2,24 +2,15 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Guess the Correlation</title>
-    <script src="../js/fonction.js"></script>
+    <script src="fonction.js"></script>
   </head>
   <body>
-    <img src="" alt="Image Guess the correlation">
-    <table>
-      <tr>
-        <td onclick="newgameprompt()">New Game</td>
-      </tr>
-      <tr>
-        <td><a href="scoreboard.php">Score Board</a></td>
-      </tr>
-      <tr>
-        <td><a href="about.php">About</a></td>
-      </tr>
-      <tr>
-        <td><a href="settings.php">Settings</a></td>
-      </tr>
-    </table>
+    <img src="" align = "center" alt="Image Guess the correlation" >
+<h1 onclick="newgameprompt()">New Game</h1>
+<a href="scoreboard.php"><h1>Score Board</h1></a></td>
+<a href="about.php"><h1>About</h1></a></td>
+<a href="settings.php"><h1>Settings</h1></a></td>
   </body>
 </html>

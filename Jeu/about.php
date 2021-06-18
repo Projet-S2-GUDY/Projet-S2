@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
-    <!-- Bootstrap & Jquery -->
     <link rel="stylesheet" href="style.css" type="text/css" />
     <meta charset="utf-8">
     <title>Guess the correlation</title>
