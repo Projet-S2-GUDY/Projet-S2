@@ -6,6 +6,6 @@
     <title>Guess the correlation</title>
   </head>
   <body>
-
+    <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
   </body>
 </html>
