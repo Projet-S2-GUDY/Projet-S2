@@ -7,6 +7,7 @@
     <title>Guess the correlation</title>
   </head>
   <body>
+<h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
 <h2>About the game<h1>
   <p>the aim of the game is simple. try to guess <FONT color="blue"><a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">how correlated the two variables in a scatter plot are.</FONT></a>the closer your guess is to the true correlation, the better.</p>
     <br>
