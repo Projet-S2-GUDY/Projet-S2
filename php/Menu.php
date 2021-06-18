@@ -12,16 +12,13 @@
         <td onclick="newgameprompt()">New Game</td>
       </tr>
       <tr>
-        <td>Two Players</td>
+        <td><a href="scoreboard.php">Score Board</a></td>
       </tr>
       <tr>
-        <td>Score Board</td>
+        <td><a href="about.php">About</a></td>
       </tr>
       <tr>
-        <td>About</td>
-      </tr>
-      <tr>
-        <td>Settings</td>
+        <td><a href="settings.php">Settings</a></td>
       </tr>
     </table>
   </body>
