@@ -52,45 +52,46 @@
           Plotly.deleteTraces("myPlot", 0);
          }
 
-         function updatenewplot(){
-           var xArray = [];
-           var yArray = [];
-           var newrho = Math.round(Math.random()*100)/100;
-           rho = newrho;
-           var y1 = 1;
-           var y2 = rho;
-           var x1 = 0;
-           var x2 = Math.sqrt(1-rho**2)
-           for (var i=0, t=50; i<t; i++) {
-             xbis = Math.random();
-             ybis = Math.random();
-             xArray.push(xbis*y1+ybis*x1)
-             yArray.push(xbis*y2+ybis*x2)
-           }
-           var data = [{
-             x:xArray,
-             y:yArray,
-             mode:"markers"
-           }];
-
-           // Define Layout https://plotly.com/javascript/axes/
-           var layout = {
-             xaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
-             yaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
-             autosize: true,
-             hovermode: false,
-           };
-           Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
+        function updatenewplot(){
+         var xArray = [];
+         var yArray = [];
+         var newrho = Math.round(Math.random()*100)/100;
+         rho = newrho;
+         var y1 = 1;
+         var y2 = rho;
+         var x1 = 0;
+         var x2 = Math.sqrt(1-rho**2)
+         for (var i=0, t=50; i<t; i++) {
+           xbis = Math.random();
+           ybis = Math.random();
+           xArray.push(xbis*y1+ybis*x1)
+           yArray.push(xbis*y2+ybis*x2)
          }
+         var data = [{
+           x:xArray,
+           y:yArray,
+           mode:"markers"
+         }];
 
-         function newplotfunc(){
-           adjustValue();
-           updatenewplot();
-           test();
-           document.getElementById('bouton').style.visibility= "visible";
-           document.getElementById('nextbouton').style.visibility= "hidden";
-           document.getElementById('new').style.visibility= "hidden";
-         }
+         // Define Layout https://plotly.com/javascript/axes/
+         var layout = {
+           xaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
+           yaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
+           autosize: true,
+           hovermode: false,
+         };
+         Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
+       }
+
+        function newplotfunc(){
+         adjustValue();
+         updatenewplot();
+         document.getElementById('bouton').style.visibility= "visible";
+         document.getElementById('nextbouton').style.visibility= "hidden";
+         document.getElementById('new').style.visibility= "hidden";
+       }
+
+
         </script>
 
         <div id="nextbouton" style="visibility: hidden; display:inline;">
@@ -103,6 +104,10 @@
         </div>
         <div id="new" style="visibility: hidden; display:inline;">
 
+        </div>
+        <div id="gameover" style="visibility: hidden; display:inline;">
+            <p>GAME OVER</p>
+            <input type="button" id="again" name="again" value="PLAY AGAIN">
         </div>
       <!-- comparaison réponse -->
       <script>
@@ -126,7 +131,7 @@
           var text = document.createTextNode("Difference: "+result);
           tag.appendChild(text);
 
-          if (result <=0.05) {
+          if (result <=0.05 && life <= 3) {
             life = life + 1;
             coin = coin + 5;
           }else if (result <=0.1) {
@@ -139,7 +144,12 @@
           document.getElementById('life').innerHTML = life;
           document.getElementById('coins').innerHTML = coin;
           document.getElementById('bouton').style.visibility= "hidden";
-          document.getElementById('nextbouton').style.visibility= "visible";
+          if (life > 0) {
+            document.getElementById('nextbouton').style.visibility= "visible";
+          }else {
+            document.getElementById('gameover').style.visibility= "visible";
+          }
+
           document.getElementById('new').style.visibility= "visible";
         }
       </script>
