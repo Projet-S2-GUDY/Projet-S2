@@ -15,30 +15,35 @@ body {
 	font-family: 'Press Start 2P', cursive;
 	font-size: 1em; /* equivalent de 16px */
 	line-height: 1.5; /* adapter au design */
-  padding-left: 550px;
-  padding-right: 550px;
+  padding-left: 500px;
+  padding-right: 500px;
 }
 h1 {
   color : black;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.5em; /* equivalent de 24px */
   font-weight: normal;
-  line-height: normal;
-  text-align: center;
+  line-height: 100%;
+  text-align: justify;
+	word-spacing: normal;
 }
 h2 {
   color : red;
   font-family: 'Press Start 2P', cursive;
   font-size: 1,3em; /* equivalent de 20px */
   font-weight: normal;
-  line-height: normal;
+  line-height: 130%;
+  text-align: justify;
+
 }
 p {
   color : black;
   font-family: 'Press Start 2P', cursive;
-  font-size: 1em; /* equivalent de 16px */
+  font-size: 0.8em; /* equivalent de 16px */
   font-weight: normal;
-  line-height: normal;
+  line-height: 120%;
+  text-align: justify;
+
 }
 
 img {
