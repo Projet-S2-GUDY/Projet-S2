@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Guess the correlation</title>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-      <script src="../js/fonction.js"></script>
+      <script src="fonction.js"></script>
   </head>
   <body>
     <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>

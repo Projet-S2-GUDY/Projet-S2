@@ -7,10 +7,10 @@
     <script src="fonction.js"></script>
   </head>
   <body>
-    <img src="" align = "center" alt="Image Guess the correlation" >
-<FONT size="5pt"><h1 onclick="newgameprompt()">New Game</h1>
-<a href="scoreboard.php"><h1>Score Board</h1></a></td>
-<a href="about.php"><h1>About</h1></a></td>
-<a href="settings.php"><h1>Settings</h1></a></td></FONT>
+<center><img src="https://i.ibb.co/xSnxs0J/LOGO-GTC.png" alt="LOGO-GTC" border="0" ></center>
+<FONT size="4pt"><h1 onclick="newgameprompt()">New Game</h1>
+<a href="scoreboard.php"><h1>Score Board</h1></a>
+<a href="about.php"><h1>About</h1></a>
+<a href="settings.php"><h1>Settings</h1></a></FONT>
   </body>
 </html>
