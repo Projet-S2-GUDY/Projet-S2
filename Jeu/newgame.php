@@ -91,6 +91,12 @@
          document.getElementById('new').style.visibility= "hidden";
        }
 
+       function playagain(){
+         document.getElementById('life').innerHTML = 3;
+         document.getElementById('coins').innerHTML = 0;
+         newplotfunc();
+         document.getElementById('gameover').style.visibility= "hidden";
+       }
 
         </script>
 
@@ -107,7 +113,7 @@
         </div>
         <div id="gameover" style="visibility: hidden; display:inline;">
             <p>GAME OVER</p>
-            <input type="button" id="again" name="again" value="PLAY AGAIN">
+            <input type="button" id="again" name="again" value="PLAY AGAIN" onclick="playagain()">
         </div>
       <!-- comparaison réponse -->
       <script>
