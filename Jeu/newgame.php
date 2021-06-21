@@ -14,7 +14,7 @@
       <p>COINS : <span id="coins">0</span></p>
     </div>
 
-    <div id="myPlot" style="width:100%;max-width:40%"></div>
+    <div class="plot" id="myPlot" ></div>
     <!-- //scatterplot -->
     <script>
       var xArray = [];
