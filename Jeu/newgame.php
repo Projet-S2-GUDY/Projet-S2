@@ -5,7 +5,6 @@
     <title>Guess the correlation</title>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <script src="fonction.js"></script>
-      <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <a href="menu.php">Main Menu</a>
@@ -51,8 +50,7 @@
 
         function adjustValue(){
           Plotly.deleteTraces("myPlot", 0);
-         }
-
+        }
         function updatenewplot(){
          var xArray = [];
          var yArray = [];
@@ -82,83 +80,97 @@
            hovermode: false,
          };
          Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
-       }
-
+        }
         function newplotfunc(){
          adjustValue();
          updatenewplot();
          document.getElementById('bouton').style.visibility= "visible";
          document.getElementById('nextbouton').style.visibility= "hidden";
          document.getElementById('new').style.visibility= "hidden";
-       }
+        }
 
-       function playagain(){
-         document.getElementById('life').innerHTML = 3;
-         document.getElementById('coins').innerHTML = 0;
-         newplotfunc();
-         document.getElementById('gameover').style.visibility= "hidden";
-       }
+      </script>
 
-        </script>
+      <div id="nextbouton" style="visibility: hidden; display:inline;">
+        <input type="button" name="next" value="NEXT" onclick="newplotfunc()">
+      </div>
 
-        <div id="nextbouton" style="visibility: hidden; display:inline;">
-          <input type="button" name="next" value="NEXT" onclick="newplotfunc()">
-        </div>
+      <div id="bouton">
+        <input type="text" id="try" name="try" value="0.">
+        <input type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
+      </div>
 
-        <div id="bouton">
-          <input type="text" id="try" name="try" value="0.">
-          <input type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
-        </div>
-        <div id="new" style="visibility: hidden; display:inline;">
+      <div id="new" style="visibility: hidden; display:inline;"></div>
 
-        </div>
-        <div id="gameover" style="visibility: hidden; display:inline;">
-            <p>GAME OVER</p>
-            <input type="button" id="again" name="again" value="PLAY AGAIN" onclick="playagain()">
-        </div>
+
       <!-- comparaison réponse -->
       <script>
         function test(){
-          document.getElementById("new").innerHTML = "";
-          var rep = document.getElementById("try").value;
-          var life = eval(document.getElementById('life').innerHTML);
-          var coin = eval(document.getElementById('coins').innerHTML);
-          var tag = document.createElement("p");
-          var result =   Math.round(Math.abs(rho-rep)*100)/100;
+        document.getElementById("new").innerHTML = "";
+        var rep = document.getElementById("try").value;
+        var life = eval(document.getElementById('life').innerHTML);
+        var coin = eval(document.getElementById('coins').innerHTML);
+        var tag = document.createElement("p");
+        var result =   Math.round(Math.abs(rho-rep)*100)/100;
 
-          var text = document.createTextNode("True R : "+ rho);
-          var element = document.getElementById("new");
-          tag.appendChild(text);
-          var brl = document.createElement("br");
-          tag.appendChild(brl);
-          text = document.createTextNode(" Guessed R: "+rep);
-          tag.appendChild(text);
-          var brl = document.createElement("br");
-          tag.appendChild(brl);
-          var text = document.createTextNode("Difference: "+result);
-          tag.appendChild(text);
+        var text = document.createTextNode("True R : "+ rho);
+        var element = document.getElementById("new");
+        tag.appendChild(text);
+        var brl = document.createElement("br");
+        tag.appendChild(brl);
+        text = document.createTextNode(" Guessed R: "+rep);
+        tag.appendChild(text);
+        var brl = document.createElement("br");
+        tag.appendChild(brl);
+        var text = document.createTextNode("Difference: "+result);
+        tag.appendChild(text);
 
-          if (result <=0.05 && life <= 3) {
-            life = life + 1;
-            coin = coin + 5;
-          }else if (result <=0.1) {
-            coin = coin + 1;
-          }else {
-            life = life - 1;
-          }
+        if (result <=0.05 && life <= 3) {
+          life = life + 1;
+          coin = coin + 5;
+        }else if (result <=0.1) {
+          coin = coin + 1;
+        }else {
+          life = life - 1;
+        }
 
-          element.appendChild(tag);
-          document.getElementById('life').innerHTML = life;
-          document.getElementById('coins').innerHTML = coin;
-          document.getElementById('bouton').style.visibility= "hidden";
-          if (life > 0) {
+        element.appendChild(tag);
+        document.getElementById('life').innerHTML = life;
+        document.getElementById('coins').innerHTML = coin;
+        document.getElementById('bouton').style.visibility= "hidden";
+        if (life > 0) {
             document.getElementById('nextbouton').style.visibility= "visible";
-          }else {
+        }else {
             document.getElementById('gameover').style.visibility= "visible";
+            document.getElementById('new').style.visibility= "visible";
+            documen.getElementById("score").innerHTML=coin;
           }
-
           document.getElementById('new').style.visibility= "visible";
         }
       </script>
+
+
+    <form name="poster" method="post" action="newgame.php">
+      <div id="gameover" style="visibility: hidden; display:inline;">
+          <p>GAME OVER</p>
+          <input type="submit" id="again" name="again" value="PLAY AGAIN" onclick="sendata()">
+      </div></br>
+      <div style="visibility: hidden; display:inline;">
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo" value="">
+        <br>
+        <label for="score">Score</label>
+        <input type="text" name="score" value="">
+      </div>
+    </form>
+
+    <script>
+        function sendata(){
+          document.forms["poster"]["pseudo"].value=localStorage.getItem("storageName");
+          document.forms["poster"]["score"].value=document.getElementById("coins").innerHTML;
+          document.getElementById('gameover').style.visibility= "hidden";
+        }
+      </script>
+
   </body>
 </html>
