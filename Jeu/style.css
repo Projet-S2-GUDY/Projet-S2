@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Toute cette partie sera adapté avec des tests, site pour s'aider :
-- https://nekocalc.com/fr/px-a-em-convertisseur
-- https://www.alsacreations.com/astuce/lire/654-feuille-de-styles-de-base.html
-- https://www.w3schools.com/css/css_rwd_viewport.asp#:~:text=Setting%20The%20Viewport&text=The%20width%3Ddevice%2Dwidth%20part,first%20loaded%20by%20the%20browser.
-*/
-
 html {
 	font-size: 75%;
 }
@@ -13,25 +7,25 @@ body {
 	background-color: #fff;
 	color: #000;
 	font-family: 'Press Start 2P', cursive;
-	font-size: 1em; /* equivalent de 16px */
-	line-height: 1.5; /* adapter au design */
+	font-size: 100%;
+	line-height: 150%;
   padding-left: 500px;
   padding-right: 500px;
 }
 h1 {
   color : black;
   font-family: 'Press Start 2P', cursive;
-  font-size: 1.5em; /* equivalent de 24px */
-  font-weight: normal;
+  font-size: 150%;
+  font-weight: 100%;
   line-height: 100%;
   text-align: center;
-	word-spacing: normal;
+	word-spacing: 100%;
 }
 h2 {
   color : red;
   font-family: 'Press Start 2P', cursive;
-  font-size: 1,3em; /* equivalent de 20px */
-  font-weight: normal;
+  font-size: 130%;
+  font-weight: 100%;
   line-height: 130%;
   text-align: justify;
 
@@ -39,12 +33,12 @@ h2 {
 p {
   color : black;
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.8em; /* equivalent de 16px */
-  font-weight: normal;
+  font-size: 80%;
+  font-weight: 100%;
   line-height: 120%;
   text-align: justify;
 }
-a:link { 
+a:link {
 	 text-decoration:none;
 }
 
