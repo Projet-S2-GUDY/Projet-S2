@@ -5,6 +5,7 @@
     <title>Guess the correlation</title>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <script src="fonction.js"></script>
+      <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
     <a href="menu.php">Main Menu</a>
