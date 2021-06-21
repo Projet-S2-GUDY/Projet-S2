@@ -97,8 +97,8 @@
     </div>
 
     <div id="bouton">
-      <input type="text" id="try" name="try" value="0.">
-      <input type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
+      <input class="police" type="text" id="try" name="try" value="0.">
+      <input class="police" type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
     </div>
 
     <div id="new" style="visibility: hidden; display:inline;"></div>
