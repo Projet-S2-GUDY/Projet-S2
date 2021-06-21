@@ -2,12 +2,13 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Guess the correlation</title>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <script src="fonction.js"></script>
   </head>
   <body>
-    <a href="menu.php">Main Menu</a>
+    <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
     <div id="points">
       <p>VIE : <span id="life">3</span></p>
       <p>COINS : <span id="coins">0</span></p>
