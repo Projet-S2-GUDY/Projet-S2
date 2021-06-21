@@ -44,8 +44,8 @@
         yaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
         autosize: true,
         hovermode: false,
-        width: 0.6 * window.innerWidth,
-        height: 0.6 * window.innerHeight
+        width: 0.4 * window.innerWidth,
+        height: 0.5ù * window.innerHeight
       };
       // Display using Plotly
       var myDiv = document.getElementById('myPlot')
@@ -53,8 +53,8 @@
 
       window.onresize = function() {
         Plotly.relayout(myPlot, {
-          width: 0.6 * window.innerWidth,
-          height: 0.6 * window.innerHeight
+          width: 0.4 * window.innerWidth,
+          height: 0.5 * window.innerHeight
         })
       }
       function adjustValue(){
@@ -87,8 +87,8 @@
          yaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
          autosize: true,
          hovermode: false,
-         width: 0.6 * window.innerWidth,
-         height: 0.6 * window.innerHeight
+         width: 0.4 * window.innerWidth,
+         height: 0.5 * window.innerHeight
        };
        // Display using Plotly
        var myDiv = document.getElementById('myPlot')
@@ -96,8 +96,8 @@
 
        window.onresize = function() {
          Plotly.relayout(myPlot, {
-           width: 0.6 * window.innerWidth,
-           height: 0.6 * window.innerHeight
+           width: 0.4 * window.innerWidth,
+           height: 0.5 * window.innerHeight
          })
        }
       }
