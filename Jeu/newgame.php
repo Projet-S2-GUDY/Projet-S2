@@ -44,12 +44,19 @@
         yaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
         autosize: true,
         hovermode: false,
+        width: 0.6 * window.innerWidth,
+        height: 0.6 * window.innerHeight
       };
-
       // Display using Plotly
-      var config = {responsive: true};
-      Plotly.newPlot("myPlot", data, layout,config,{displayModeBar: false});
+      var myDiv = document.getElementById('myPlot')
+      Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
 
+      window.onresize = function() {
+        Plotly.relayout(myPlot, {
+          width: 0.6 * window.innerWidth,
+          height: 0.6 * window.innerHeight
+        })
+      }
       function adjustValue(){
         Plotly.deleteTraces("myPlot", 0);
       }
@@ -80,9 +87,19 @@
          yaxis: {range: [0, 1], dtick: 0.5,fixedrange: true},
          autosize: true,
          hovermode: false,
+         width: 0.6 * window.innerWidth,
+         height: 0.6 * window.innerHeight
        };
-       var config = {responsive: true};
-       Plotly.newPlot("myPlot", data, layout,config,{displayModeBar: false});
+       // Display using Plotly
+       var myDiv = document.getElementById('myPlot')
+       Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
+
+       window.onresize = function() {
+         Plotly.relayout(myPlot, {
+           width: 0.6 * window.innerWidth,
+           height: 0.6 * window.innerHeight
+         })
+       }
       }
       function newplotfunc(){
        adjustValue();
