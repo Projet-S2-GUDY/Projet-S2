@@ -45,7 +45,7 @@
         autosize: true,
         hovermode: false,
         width: 0.4 * window.innerWidth,
-        height: 0.5ù * window.innerHeight
+        height: 0.5 * window.innerHeight
       };
       // Display using Plotly
       var myDiv = document.getElementById('myPlot')
