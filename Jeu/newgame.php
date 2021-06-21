@@ -47,7 +47,8 @@
       };
 
       // Display using Plotly
-      Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
+      var config = {responsive: true};
+      Plotly.newPlot("myPlot", data, layout,config,{displayModeBar: false});
 
       function adjustValue(){
         Plotly.deleteTraces("myPlot", 0);
@@ -80,7 +81,8 @@
          autosize: true,
          hovermode: false,
        };
-       Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
+       var config = {responsive: true};
+       Plotly.newPlot("myPlot", data, layout,config,{displayModeBar: false});
       }
       function newplotfunc(){
        adjustValue();
