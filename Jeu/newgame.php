@@ -123,7 +123,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       <input class="police" type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
     </div>
 
-    <div id="new" style="visibility: hidden; display:inline;"></div>
+    <div style="margin-left:16%"><div id="new" style="visibility: hidden; display:inline;"></div></div>
 
 
     <!-- comparaison réponse -->
@@ -136,16 +136,16 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       var tag = document.createElement("p");
       var result =   Math.round(Math.abs(rho-rep)*100)/100;
 
-      var text = document.createTextNode("True R : "+ rho);
+      var text = document.createTextNode(" True R : "+ rho);
       var element = document.getElementById("new");
       tag.appendChild(text);
       var brl = document.createElement("br");
       tag.appendChild(brl);
-      text = document.createTextNode(" Guessed R: "+rep);
+      text = document.createTextNode(" Guessed R : "+rep);
       tag.appendChild(text);
       var brl = document.createElement("br");
       tag.appendChild(brl);
-      var text = document.createTextNode("Difference: "+result);
+      var text = document.createTextNode(" Difference : "+result);
       tag.appendChild(text);
 
       if (result <=0.05 && life <= 3) {
@@ -176,7 +176,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
 
     <form name="poster" method="post" action="newgame.php">
       <div id="gameover" style="visibility: hidden; display:inline;">
-          <p>GAME OVER</p>
+          <p style="margin-left:39%;color:red" font-size='50em'> GAME OVER</p>
           <input type="submit" id="again" name="again" value="PLAY AGAIN">
           <input type="submit" name="menuprincipal" value="MENU PRINCIPAL">
       </div></br>
