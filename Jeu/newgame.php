@@ -166,7 +166,6 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
           document.getElementById('new').style.visibility= "visible";
       }else {
           document.getElementById('gameover').style.visibility= "visible";
-          document.getElementById('menuprincipal').style.visibility= "visible";
           document.getElementById('new').style.visibility= "visible";
           document.forms["poster"]["pseudo"].value=localStorage.getItem("storageName");
           document.forms["poster"]["score"].value=document.getElementById("coins").innerHTML;
@@ -179,6 +178,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       <div id="gameover" style="visibility: hidden; display:inline;">
           <p>GAME OVER</p>
           <input type="submit" id="again" name="again" value="PLAY AGAIN">
+          <input type="submit" name="menuprincipal" value="MENU PRINCIPAL">
       </div></br>
       <div style="visibility: hidden; display:inline;">
         <label for="pseudo">Pseudo</label>
@@ -188,7 +188,6 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
         <input type="text" name="score" value="">
       </div>
     </form>
-<a href="Menu.php"><input type="submit" style="visibility: hidden; display:inline;" id="menuprincipal" value="MENU PRINCIPAL" onclick="window.location='Menu.php';"></a>
 <!--------------------------------DEBUT DU CODE PHP--------------------------------->
   <?php
 
@@ -210,8 +209,17 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
           $mysqli->query($insert) or die ('Erreur SQL ! <br>'.$req.'<br>'.$mysqli->error);
 
       // on ferme la connexion
-      $mysqli->close();
     }
+
+    if (isset($_POST['menuprincipal']))
+        {
+        ?>
+        <script type="text/javascript">
+          window.location = "Menu.php";
+        </script>
+        <?php
+        }
+    $mysqli->close();
   ?>
 <!------------------------------FIN DU CODE PHP------------------------------>
 
