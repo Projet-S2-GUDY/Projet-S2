@@ -213,6 +213,16 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
 
     if (isset($_POST['menuprincipal']))
         {
+        $pseudo=$_POST['pseudo'];
+        $score=$_POST['score'];
+
+        // On prépare la commande sql d'insertion
+        $insert = "INSERT INTO partie (pseudo, Score) VALUES ('".$pseudo."', '".$score."')";
+
+        /* on lance la commande ($mysqli->query() ) et on rédige un petit message d'erreur
+		     pour le cas où la requête ne passe pas (or die + $mysqli->error)
+        (Message qui intégrera les causes d'erreur sql) */
+        $mysqli->query($insert) or die ('Erreur SQL ! <br>'.$req.'<br>'.$mysqli->error);
         ?>
         <script type="text/javascript">
           window.location = "Menu.php";
