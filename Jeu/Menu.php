@@ -12,7 +12,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
   <body>
     <script>
     function newgameprompt(linkto){
-      var per = prompt("Please enter a username\n(maximum 20 alphanumeric or underscore characters)")
+      var per = prompt("Please enter a username")
       if (per !==null && per !== ""){
         window.location.href="newgame.php";
         localStorage.setItem("storageName",per);
