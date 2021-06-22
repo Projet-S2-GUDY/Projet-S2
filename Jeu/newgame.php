@@ -13,11 +13,11 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
   <body>
     <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
     <div id="points">
-      <p>VIE : <span id="life">3</span></p>
-      <p>COINS : <span id="coins">0</span></p>
+      <p><img src="https://i.ibb.co/vLVbFC7/life.gif" alt="life" border="0" style="width:3%;height:3%;margin-left:20%" >x <span id="life">3</span>
+      <img src="https://i.ibb.co/CJN6WWR/Logo-23gogo.gif" alt="Logo-23gogo" border="0" style="width:3%;height:3%;">x <span id="coins">0</span></p>
     </div>
 
-    <div class="plot" id="myPlot" ></div>
+    <div align="center" class="plot" id="myPlot" ></div>
     <!-- //scatterplot -->
     <script>
       var xArray = [];
@@ -115,11 +115,11 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
     </script>
 
     <div id="nextbouton" style="visibility: hidden; display:inline;">
-      <input type="button" name="next" value="NEXT" onclick="newplotfunc()">
+      <input class="police" type="button" name="next" value="NEXT" onclick="newplotfunc()">
     </div>
 
     <div id="bouton">
-      <input class="police" type="text" id="try" name="try" value="0.">
+      <input class="police" type="text" id="try" name="try" value="0." style="width:10%">
       <input class="police" type="button" id="reponse" name="reponse" value="GUESS" onclick="test()">
     </div>
 
