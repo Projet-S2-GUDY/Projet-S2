@@ -1,5 +1,12 @@
 <?php
 include("connexion.php"); //Inclusion du fichier qui contient le code pour la connexion
+$mysqli = connectMaBase();
+$sql = "SELECT  pseudo, Score from partie order by Score DESC limit 15";
+$reponse = $mysqli->query($sql);
+$arr_users = [];
+if ($reponse->num_rows > 0) {
+    $arr_users = $reponse->fetch_all(MYSQLI_ASSOC);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -9,22 +16,25 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
     <title>Guess the correlation</title>
   </head>
   <body>
+
     <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
 
-      <?php
+      <table id="userTable">
+          <thead>
+              <th>Pseudo</th>
+              <th>Score</th>
+          </thead>
+          <tbody>
+              <?php if(!empty($arr_users)) { ?>
+                  <?php foreach($arr_users as $user) { ?>
+                      <tr>
+                          <td><?php echo $user['pseudo']; ?></td>
+                          <td><?php echo $user['Score']; ?></td>
+                      </tr>
+                  <?php } ?>
+              <?php } ?>
+          </tbody>
+      </table>
 
-        $mysqli = connectMaBase(); // Appel de la fonction pour se connecter
-
-      // On récupère tout le contenu de la table partie
-      $reponse = $mysqli->query('SELECT  pseudo, Score from partie order by Score limit 15');
-
-      // Parcourir le tableau des enregistrements et affichage de chaque message
-      while($ligne = $reponse->fetch_array(MYSQLI_BOTH)) {
-          echo $ligne['pseudo'].": ";
-          echo $ligne['Score']."<br>";
-        }
-      $mysqli->close(); // Termine le traitement de la requête
-
-      ?>
   </body>
 </html>
