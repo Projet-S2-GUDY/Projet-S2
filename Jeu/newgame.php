@@ -1,3 +1,6 @@
+<?php
+include("connexion.php"); //Inclusion du fichier qui contient le code pour la connexion
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -174,9 +177,9 @@
     <form name="poster" method="post" action="newgame.php">
       <div id="gameover" style="visibility: hidden; display:inline;">
           <p>GAME OVER</p>
-          <input type="submit" id="again" name="again" value="PLAY AGAIN" onclick="sendata()">
+          <input type="submit" id="again" name="again" value="PLAY AGAIN">
       </div></br>
-      <div style="visibility: hidden; display:inline;">
+      <div >
         <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id="pseudo" value="">
         <br>
@@ -184,6 +187,32 @@
         <input type="text" name="score" value="">
       </div>
     </form>
+
+<!--------------------------------DEBUT DU CODE PHP--------------------------------->
+  <?php
+
+////////////////////////////////CONNEXION/////////////////////////////////////
+    $mysqli = connectMaBase(); // Appel de la fonction pour se Connecter au SGBD
+
+/////////////////////////////ENREGISTREMENT EN BDD//////////////////////////////
+      if (isset ($_POST['again'])){
+          // On récupère les valeurs entrées par l'utilisateur :
+          $pseudo=$_POST['pseudo'];
+          $score=$_POST['score'];
+
+          // On prépare la commande sql d'insertion
+          $insert = "INSERT INTO partie (pseudo, Score) VALUES ('".$pseudo."', '".$score."')";
+
+          /* on lance la commande ($mysqli->query() ) et on rédige un petit message d'erreur
+		      pour le cas où la requête ne passe pas (or die + $mysqli->error)
+          (Message qui intégrera les causes d'erreur sql) */
+          $mysqli->query($insert) or die ('Erreur SQL ! <br>'.$req.'<br>'.$mysqli->error);
+
+      // on ferme la connexion
+      mysql_close();
+    }
+  ?>
+<!------------------------------FIN DU CODE PHP------------------------------>
 
 
   </body>
