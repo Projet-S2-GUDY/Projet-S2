@@ -166,6 +166,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
           document.getElementById('new').style.visibility= "visible";
       }else {
           document.getElementById('gameover').style.visibility= "visible";
+          document.getElementById('menuprincipal').style.visibility= "visible";
           document.getElementById('new').style.visibility= "visible";
           document.forms["poster"]["pseudo"].value=localStorage.getItem("storageName");
           document.forms["poster"]["score"].value=document.getElementById("coins").innerHTML;
@@ -179,7 +180,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
           <p>GAME OVER</p>
           <input type="submit" id="again" name="again" value="PLAY AGAIN">
       </div></br>
-      <div >
+      <div style="visibility: hidden; display:inline;">
         <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id="pseudo" value="">
         <br>
@@ -187,7 +188,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
         <input type="text" name="score" value="">
       </div>
     </form>
-
+<a href="Menu.php"><input type="submit" style="visibility: hidden; display:inline;" id="menuprincipal" value="MENU PRINCIPAL" onclick="window.location='Menu.php';"></a>
 <!--------------------------------DEBUT DU CODE PHP--------------------------------->
   <?php
 
@@ -209,7 +210,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
           $mysqli->query($insert) or die ('Erreur SQL ! <br>'.$req.'<br>'.$mysqli->error);
 
       // on ferme la connexion
-      mysql_close();
+      $mysqli->close();
     }
   ?>
 <!------------------------------FIN DU CODE PHP------------------------------>
