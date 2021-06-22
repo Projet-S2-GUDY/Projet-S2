@@ -18,7 +18,7 @@
   <h2>Rules<h1>
   <p>guess within 0.05 of the true correlation: +1 life and +5 coins<br>guess within 0.10 of the true correlation: +1 coin<br>guess within >0.10 of the true correlation: -1 life<br>You will also receive bonus coins if you make good guesses in a row!<p>
     <br>
-  <h2>About me<h1>
+  <h2>About us<h1>
   <p>We are a group a Student studying statistics and business intelligence. This game is a second semester project of our studies.
 We're always grateful for suggestions and happy to answer questions about the game or how the data will be used. so  <FONT color="blue"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">email us</a></FONT> if you need any information.<p>
     <br>
