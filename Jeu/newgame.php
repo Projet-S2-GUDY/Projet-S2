@@ -189,7 +189,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       <div id="gameover" style="visibility: hidden; display:inline;">
           <p style="margin-left:39%;color:red" font-size='50em'> GAME OVER</p>
           <input type="submit" id="again" name="again" value="PLAY AGAIN">
-          <input type="submit" name="menuprincipal" value="MENU PRINCIPAL">
+          <input type="submit" name="menuprincipal" value="MAIN MENU">
       </div></br>
       <div style="visibility: hidden; display:inline;">
         <label for="pseudo">Pseudo</label>
