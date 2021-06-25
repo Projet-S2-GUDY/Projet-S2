@@ -16,7 +16,7 @@
   <p>guess the correlation is a  <FONT color="blue"><a href="https://en.wikipedia.org/wiki/Human-based_computation_game" target="_blank">game with a purpose.</a></FONT> this means, while it aims to be entertaining, data on the guesses is collected and used to analyse how we perceive correlations in scatter plots. so the more people that play, the more data is generated!<p>
     <br>
   <h2>Rules<h1>
-  <p>guess within 0.05 of the true correlation: +1 life and +5 coins<br>guess within 0.10 of the true correlation: +1 coin<br>guess within >0.10 of the true correlation: -1 life<br>You will also receive bonus coins if you make good guesses in a row!<p>
+  <p>guess within 0.05 of the true correlation: +1 life and +5 coins<br>guess within 0.10 of the true correlation: +1 coin<br>guess within >0.10 of the true correlation: -1 life<p>
     <br>
   <h2>About us<h1>
   <p>We are a group a Student studying statistics and business intelligence. This game is a second semester project of our studies.
