@@ -7,22 +7,25 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css" type="text/css" />
     <title>Guess the correlation</title>
+    <!-- Javascript permettant d'utiliser plotly ce qui nous permet d'obtenir un graphique avec des points X,Y-->
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
       <script src="fonction.js"></script>
   </head>
+
   <body>
     <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
+      <!-- Cette div points contient le score et les vies -->
     <div id="points">
       <p><img src="https://i.ibb.co/vLVbFC7/life.gif" alt="life" border="0" style="width:3%;height:3%;margin-left:20%" >x <span id="life">3</span>
       <img src="https://i.ibb.co/CJN6WWR/Logo-23gogo.gif" alt="Logo-23gogo" border="0" style="width:3%;height:3%;">x <span id="coins">0</span></p>
     </div>
-
+    <!-- cette div contient le graphique le nuage de point -->
     <div align="center" class="plot" id="myPlot" ></div>
     <!-- //scatterplot -->
     <script>
       var xArray = [];
       var yArray = [];
-
+// Ici on va initialisé les variables x et y pour obenir un tableau de points pour notre graphique, les points du tableau vont etre en fonction du coefficient de corrélation
       var rho = Math.round(Math.random()*100)/100;
       var y1 = 1;
       var y2 = rho;
@@ -53,16 +56,18 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       // Display using Plotly
       var myDiv = document.getElementById('myPlot')
       Plotly.newPlot("myPlot", data, layout,{displayModeBar: false});
-
+      // côté responsiv du graphique
       window.onresize = function() {
         Plotly.relayout(myPlot, {
           width: 0.4 * window.innerWidth,
           height: 0.5 * window.innerHeight
         })
       }
+      // fonction qui va permette de supprimer les points dans les graphiques
       function adjustValue(){
         Plotly.deleteTraces("myPlot", 0);
       }
+      // fonction qui permet de re remplir le graphique avec de nouveau points et un nouveau coefficient
       function updatenewplot(){
        var xArray = [];
        var yArray = [];
@@ -104,6 +109,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
          })
        }
       }
+      // fonction qui permet d'afficher un nouveau graphique avec toute les données correspondant et les boutons disparait
       function newplotfunc(){
        adjustValue();
        updatenewplot();
@@ -128,7 +134,9 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
 
     <!-- comparaison réponse -->
     <script>
+    // fonction qui permet de tester la valeur du joueur et de relevé les differences par rapport au vrai coefficient et on affichera les textes de resultat
       function test(){
+        // on va crée un nouvelle élement dans la div new et y afficher les resultats du joueurs
       document.getElementById("new").innerHTML = "";
       var rep = document.getElementById("try").value;
       var life = eval(document.getElementById('life').innerHTML);
@@ -147,9 +155,11 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       tag.appendChild(brl);
       var text = document.createTextNode(" Difference : "+result);
       tag.appendChild(text);
-
-      if (result <=0.05 && life <= 3) {
-        life = life + 1;
+      // actualisation du nombre de vie et score du joueur
+      if (result <=0.05) {
+        if (life < 3) {
+          life = life + 1;
+        }
         coin = coin + 5;
       }else if (result <=0.1) {
         coin = coin + 1;
@@ -167,13 +177,14 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
       }else {
           document.getElementById('gameover').style.visibility= "visible";
           document.getElementById('new').style.visibility= "visible";
+          // on va stocker le pseudo et le score dans un formulaire qui est invisible pour le garder en mémoire pour l'envoyer dans la BD plus tard
           document.forms["poster"]["pseudo"].value=localStorage.getItem("storageName");
           document.forms["poster"]["score"].value=document.getElementById("coins").innerHTML;
         }
       }
     </script>
 
-
+    <!-- formulaire avec des inputs invisibles pour le score et pseudo -->
     <form name="poster" method="post" action="newgame.php">
       <div id="gameover" style="visibility: hidden; display:inline;">
           <p style="margin-left:39%;color:red" font-size='50em'> GAME OVER</p>
