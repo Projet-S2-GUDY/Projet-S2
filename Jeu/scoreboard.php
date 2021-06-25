@@ -17,10 +17,9 @@ if ($reponse->num_rows > 0) {
   </head>
   <body>
 
-    <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1>
-
-      <table id="userTable">
-          <thead>
+    <h1><div align="right"><a href="Menu.php">Main Menu</a></div><h1><br><br>
+      <table id="userTable" align="center">
+          <thead style="color:purple;">
               <th>Pseudo</th>
               <th>Score</th>
           </thead>
