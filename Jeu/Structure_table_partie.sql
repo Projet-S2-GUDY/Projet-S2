@@ -31,7 +31,7 @@ CREATE TABLE `partie` (
   `id_partie` int(11) NOT NULL,
   `pseudo` varchar(20) NOT NULL,
   `Score` int(11) NOT NULL,
-  `Date` date NOT NULL DEFAULT current_timestamp()
+  `Date` TIMESTAMP NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
