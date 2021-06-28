@@ -6,6 +6,7 @@ include("connexion.php"); //Inclusion du fichier qui contient le code pour la co
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Guess the correlation</title>
     <!-- Javascript permettant d'utiliser plotly ce qui nous permet d'obtenir un graphique avec des points X,Y-->
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
